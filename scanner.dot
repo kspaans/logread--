@@ -1,0 +1,23 @@
+/* The Scheme Scanner/Lexer/Tokenizer
+ *  Appropriated from the CS241 example.
+ *  For use in my logfile reader.
+ *  This is a rough diagram of how it works (as an NFA!)
+ */
+
+digraph scanner
+	{
+		scan
+		scanacc
+		foundtrans
+		finalizetoken
+		
+		token [shape=diamond];
+		transition [shape=diamond];
+		
+		trans [label="Transition Table", shape=box];
+		final [label="Final States", shape=box];
+
+		scan -> scanacc;
+		scanacc -> foundtrans;
+		scanacc -> finalizetoken;
+	}
